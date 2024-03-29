@@ -16,8 +16,8 @@ export default function Header() {
             <div>
               <svg
                 style={{ marginRight: "10px" }}
-                width={110}
-                height={40}
+                width={150}
+                height={150}
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 11 83.03 26.82"
@@ -36,6 +36,7 @@ export default function Header() {
                   <input type="text" placeholder="Recherche des articles" />
                 </div>
               </div>
+              {/*  */}
               <div className="toggle_slider">
                 <div className="toggle">
                   <h4>Trier par prix :</h4>
@@ -47,6 +48,7 @@ export default function Header() {
                   <RangeSlider value={value} setValue={setValue} />
                 </div>
               </div>
+              {/*  */}
             </div>
             <div>
               <button>S'inscrire</button>

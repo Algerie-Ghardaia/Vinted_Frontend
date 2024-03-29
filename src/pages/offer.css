@@ -1,0 +1,76 @@
+.main1 {
+  font-family: "Roboto", sans-serif;
+  background-color: #ebedee;
+  height: 100vh;
+}
+.ar_selected {
+  display: flex;
+  justify-content: space-around;
+  padding: 100px 350px;
+}
+.profile_username {
+  display: flex;
+  margin: 0 auto;
+  width: 250px;
+  height: 100px;
+  justify-content: space-around;
+  align-items: center;
+}
+.profile_username img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+}
+
+
+.info_article {
+  background-color: #ffffff;
+  height: 550px;
+  width: 430px;
+  padding: 25px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 3px;
+}
+
+.info_article .price {
+  font-size: 23px;
+  margin-bottom: 15px;
+}
+
+.selected img {
+  height: 550px;
+  width: 400px;
+  border-radius: 3px;
+}
+.discription {
+  display: flex;
+}
+
+h5 {
+  width: 40%;
+  margin-bottom: 13px;
+  color: #999999;
+}
+
+h6 {
+  width: 60%;
+  font-style: italic;
+}
+
+.lo_us h2{
+    font-size: 18px;
+}
+.lo_us p{
+    font-size: 15px;
+    margin-top: 12px;
+    line-height: 23px;
+}
+.lo_us .bt{
+    font-size: 15px;
+    margin-top: 12px;
+    width: 300px;
+    margin-left: 37px;
+    height: 35px;
+    color: #ffffff;
+    background-color: #2EB0BA;
+}

@@ -1,0 +1,52 @@
+.container {
+  width: 1300px !important;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+}
+.glob_article {
+  margin-top: 30px;
+  width: 250px;
+  
+}
+.user_img {
+  display: flex;
+  width: 15%;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 7px;
+  font-size: 15px;
+  color: #999999;
+  margin-left: 9px;
+  
+}
+a {
+  text-decoration: none;
+}
+.user_img img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: "cover" 
+}
+
+.img_article img {
+  width: 235px;
+  height: 360px;
+  cursor: pointer;
+}
+
+img{
+    object-fit: "cover"!important;
+}
+.price {
+  color: black;
+
+}
+p{
+    margin: 5px 5px;
+    color: #999999;
+    font-size: 12px;
+}
