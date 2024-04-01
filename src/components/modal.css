@@ -1,0 +1,39 @@
+.model {
+  width: 80%;
+}
+.model-content {
+  background-color: rgba(0, 0, 0, 0.558)!important;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  margin-top: -90px;
+  
+}
+.model-content {
+   
+  background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.k{
+    background-color: #ffffffe3;
+    height: 300px;
+    width: 500px;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;justify-content: center;
+    font-family: "Roboto", sans-serif;
+    margin-top: -80px;
+}
+
+.btn_modal{
+    width: 200px!important;
+    margin-left: 40px!important;
+}
+
+.isNon{
+  margin-top: 7px!important;
+  margin-bottom: 20px!important;
+  font-size: 15px !important;
+}

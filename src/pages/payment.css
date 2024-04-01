@@ -10,8 +10,112 @@
   width: 550px;
   height: 600px;
   background-color: #ffffff;
-  padding: 10px;
-  margin-top: 100px;
+  padding: 20px;
+  margin-top: 80px;
   border-radius: 5px;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
+.haut p {
+  font-size: 17px;
+  font-weight: 200 !important;
+}
+
+.style {
+  display: flex;
+  flex-direction: row;
+}
+.somme01{
+  font-size: 15px;
+  margin-top:4px;
+  margin-left: 365px;
+  color: #949595;
+}
+.somme{
+  font-size: 15px;
+  margin-top:4px;
+  margin-left: 350px;
+  color: #949595;
+}
+.somme1{
+  font-size: 15px;
+  margin-top:4px;
+  margin-left: 250px;
+  color: #949595;
+}
+.rhami{
+ border: 0.7px solid #dedede;
+ margin-top: 30px;
+}
+
+.centre{
+  margin-top: -100px;
+}
+
+.style .to{
+  font-size: 20px;
+  margin-left: 400px;
+  margin-top: 10px;
+}
+.style h2{
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.text{
+  font-size: 22px;
+  margin-top: 30px;
+  line-height: 30px;
+  margin-bottom: 20px;
+  font-weight: 300!important;
+}
+
+.rhami1{
+  border: 0.7px solid #dedede;
+  margin-top: 30px;
+  margin-bottom: -50px;
+ }
+.pay{
+  width: 390px;
+  height: 40px;
+  border: none !important;
+  display: flex;
+}
+.pay1{
+  width: 100px;
+  margin-left: 7px;
+  height: 40px;
+  border: none !important;
+  display: flex;
+  border: none;
+  border: 1 px solid #f5f6f7;
+  border-radius: 6px;
+  padding: 10px;
+}
+.pay2{
+  width: 60px !important;
+  
+}
+
+.logo_carte{
+  height: 40px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  padding-top:10px;
+  width: 100px;
+  background:#f5f6f7;
+  padding-left: 7px;
+}
+
+.btn_payment{
+  width: 500px;
+  background-color: #2eb0ba;
+  border-radius: 7px;
+  color: white;
+  height: 50px;
+  margin-bottom: -50px;
+  margin-top: -50px;
+}
+

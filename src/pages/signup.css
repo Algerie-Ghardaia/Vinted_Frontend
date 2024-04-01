@@ -1,0 +1,97 @@
+.main_signup {
+  font-family: "Roboto", sans-serif;
+  /* #FFFFFF */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -100px;
+}
+
+.div_signup {
+  width: 370px;
+  border-radius: 4px;
+  box-shadow: rgba(100, 100, 111, 0.1) 0px 7px 29px 0px;
+  color: black !important;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 30px;
+}
+.textField {
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 20px;
+  height: 40px;
+  border: none;
+
+}
+
+.text_input {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 300px;
+}
+
+.ok_error {
+  margin-top: 25px;
+  text-align: center;
+  color: red!important;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+.FormControl {
+  margin-left: 20px;
+  margin-top: 30px;
+  margin-left: 35px;
+}
+.FormControl p {
+  font-size: 15px;
+  width: 300px;
+}
+
+.btn_sinscrire {
+  width: 300px;
+  background-color: #2eb0ba;
+  border-radius: 7px;
+  color: white;
+  height: 50px;
+  margin-left: 30px;
+  margin-top: 30px;
+  
+}
+.question{
+    display: flex;
+    justify-content: center;
+    font-size: 27px!important;
+    cursor: pointer;
+}
+.question p{
+    font-size: 15px!important;
+    color: #2eb0ba;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+.MuiInputBase-input {
+  color: black!important;
+}
+
+.checkbox{
+  display: flex;
+  margin-left: -10px;
+  
+}
+.checkbox p{
+  margin-left: -30px;
+  height: 100px;
+  font-size: 15px;
+}
+
+.sous{
+  width: 370px;
+  margin-top: 50px;
+  margin-bottom: -50px;
+}
