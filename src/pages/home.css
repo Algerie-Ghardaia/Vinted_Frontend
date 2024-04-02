@@ -19,7 +19,7 @@
   margin-bottom: 7px;
   font-size: 15px;
   color: #999999;
-  margin-left: 9px;
+  margin-left: 19px;
   
 }
 a {
@@ -34,13 +34,18 @@ a {
 }
 
 .img_article img {
-  width: 235px;
+  width: 250px;
   height: 360px;
   cursor: pointer;
+  margin-left: 10px;
+  padding: 5px;
+  object-fit: "cover";
 }
 
 img{
-    object-fit: "cover"!important;
+    object-fit: "fill"!important;
+
+    margin-left: 10px;
 }
 .price {
   color: black;
@@ -50,4 +55,5 @@ p{
     margin: 5px 5px;
     color: #999999;
     font-size: 12px;
+    margin-left: 20px;
 }

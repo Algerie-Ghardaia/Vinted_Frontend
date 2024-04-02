@@ -5,18 +5,25 @@ import { Link, useNavigate } from "react-router-dom";
 
 //---------------LIBRARY MATERIAL UI----------------//
 import { IoSearchSharp } from "react-icons/io5";
-import RangeSlider from "./Slider";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Switch from "@mui/material/Switch";
 import Modal from "../components/Modal";
+import { SousHeader } from "./SousHeader";
 //-------------------------------------------------//
 
-export default function Header({ handlUserToken, token }) {
+export default function Header({ handlUserToken, token, search, setSearch }) {
   //-------------------STATE--------------------//
-  const [value, setValue] = useState([10, 200]);
-  const [showModal, setShowModal] = useState(false);
-  //---------------------------------------------//
 
+  const [showModal, setShowModal] = useState(false);
+  const [isClick, setIsClick] = useState(false);
+  //---------------------------------------------//
+   //---------Modal---------//
+   const handlaSousHeader = () => {
+    if (isClick) {
+      setIsClick(false);
+    } else {
+      setIsClick(true);
+    }
+  };
+  //----------------------//
   //---------Modal---------//
   const handlaShowModal = () => {
     if (showModal) {
@@ -28,44 +35,23 @@ export default function Header({ handlUserToken, token }) {
   //----------------------//
 
   const navigate = useNavigate();
+  console.log(navigate);
 
-  const sousHeader = (
-    <>
-      <div className="toggle_slider ">
-        <div className="toggle ">
-          <h4>Trier par prix :</h4>
-          <FormControlLabel control={<Switch defaultChecked style={{}} />} />
-        </div>
-        <div className="slider">
-          <h4
-            style={{
-              fontSize: "17px",
-              marginTop: "5px",
-              marginLeft: "8px",
-            }}
-          >
-            Prix entre :
-          </h4>
-          <RangeSlider value={value} setValue={setValue} />
-        </div>
-      </div>
-    </>
-  );
-            
   handlUserToken(token);
   return (
     <>
-      <header >
+      <header>
         <div
-          
           className={token ? "header_cantainer navToken" : "header_cantainer"}
         >
           <div className={token ? "token_sous_header " : "sous_header"}>
             <Link to={"/"}>
-              
-              <div className="header_logo" onClick={()=>{
-                setShowModal(false);
-              }}>
+              <div
+                className="header_logo"
+                onClick={() => {
+                  setShowModal(false);
+                }}
+              >
                 <svg
                   width={130}
                   height={130}
@@ -91,37 +77,17 @@ export default function Header({ handlUserToken, token }) {
               <div className="input-icone">
                 <div className="icone_display">
                   <IoSearchSharp className="icon" />
-                  <input type="text" placeholder="Recherche des articles" />
+                  <input
+                    type="text"
+                    placeholder="Recherche des articles"
+                    value={search}
+                    onChange={(event) => {
+                      setSearch(event.target.value);
+                    }}
+                  />
                 </div>
               </div>
-              {/*  */}
-              {/* {token ? (
-                <>
-                  <div className="toggle_slider">
-                    <div className="toggle">
-                      <h4>Trier par prix :</h4>
-                      <FormControlLabel
-                        control={<Switch defaultChecked style={{}} />}
-                      />
-                    </div>
-                    <div className="slider">
-                      <h4
-                        style={{
-                          fontSize: "17px",
-                          marginTop: "5px",
-                          marginLeft: "8px",
-                        }}
-                      >
-                        Prix entre :
-                      </h4>
-                      <RangeSlider value={value} setValue={setValue} />
-                    </div>
-                  </div>
-                </>
-              ) : (
-                <></>
-              )} */}
-              {token ? sousHeader : ""}
+              <div className={isClick?"hidden":""}>{token ? <SousHeader /> : ""}</div>
               {/*  */}
             </div>
             <div style={{ marginTop: "20px" }}>
@@ -141,22 +107,31 @@ export default function Header({ handlUserToken, token }) {
               ) : (
                 <>
                   <Link to={"/signup"}>
-                    <button onClick={()=>{
-                      setShowModal(false);
-                    }}>S'inscrire</button>
+                    <button
+                      onClick={() => {
+                        setShowModal(false);
+                      }}
+                    >
+                      S'inscrire
+                    </button>
                   </Link>
                 </>
               )}
 
-              <Link to={"/"} >
-              <button
-                className={token ? " isNone" : ""}
-                onClick={handlaShowModal}
-              >
-                Se connecter
-              </button>
+              <Link to={"/"}>
+                <button
+                  className={token ? " isNone" : ""}
+                  onClick={handlaShowModal}
+                >
+                  Se connecter
+                </button>
               </Link>
-              <button className="btn">Vente tes articles</button>
+              <Link to={"/publish"}>
+                <button className={isClick?"hidden":""} onClick={()=>{
+                  // token ? <SousHeader /> : ""
+                  handlaSousHeader()
+                }}>Vente tes articles</button>
+              </Link>
             </div>
           </div>
         </div>
@@ -167,7 +142,7 @@ export default function Header({ handlUserToken, token }) {
           handlUserToken={handlUserToken}
           showModal={showModal}
           setShowModal={setShowModal}
-          handlaShowModal ={handlaShowModal}
+          handlaShowModal={handlaShowModal}
         />
       ) : (
         ""

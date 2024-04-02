@@ -5,14 +5,18 @@ import home from "../assets/img/home.png";
 import CircularProgress from "@mui/material/CircularProgress";
 import { Link } from "react-router-dom";
 
-export default function Home() {
+export default function Home({ search }) {
+
+//-------------------STATE--------------------//
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+ //--------------------------------------------//
+
   useEffect(() => {
     const dataFetch = async () => {
       try {
         const request = await axios.get(
-          "https://lereacteur-vinted-api.herokuapp.com/offers"
+          `https://lereacteur-vinted-api.herokuapp.com/offers?title=${search}`
         );
         setData(request.data);
         setIsLoading(false);
@@ -21,7 +25,7 @@ export default function Home() {
       }
     };
     dataFetch();
-  }, []);
+  }, [search]);
   return isLoading ? (
     <CircularProgress color="secondary" />
   ) : (

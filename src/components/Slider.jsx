@@ -3,6 +3,7 @@ import Slider from "@mui/material/Slider";
 import React from "react";
 
 export default function RangeSlider({ value, setValue }) {
+  
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };

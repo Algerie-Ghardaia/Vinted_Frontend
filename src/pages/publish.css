@@ -1,0 +1,132 @@
+.main_publish {
+  font-family: "Roboto", sans-serif;
+  background-color: #ebedee !important;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Roboto", sans-serif !important;
+  
+}
+.publish {
+  margin: 0 auto;
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 7px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.main_publish h1 {
+  text-align: start;
+  width: 1200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 7px;
+  margin-bottom: 10px;
+}
+.border {
+  background-color: rgb(255, 255, 255);
+  width: 20%;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-around;
+  align-items: center;
+  height: 70px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: black!important;
+}
+
+.title_in {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-around;
+  height: 70px;
+  align-items: center;
+  color: black!important;
+  
+}
+.title_in input {
+  width: 400px;
+  height: 40px;
+  margin-right: 90px;
+  border-radius: 4px;
+  color: #ffffff!important;
+  color: black!important;
+  font-size: 25px!important;
+}
+.title_in label {
+  width: 100px;
+  font-size: 25px;
+}
+
+textarea {
+  width: 600px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-around;
+  height: 70px;
+  align-items: center;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  font-size: 20px!important;
+}
+.textarea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    margin-left: -250px;
+    border: none!important;
+}
+.textarea label{
+    font-size: 25px; 
+    margin-left: 450px;
+    margin-top: -20px;
+}
+
+.reactbtn{
+  background: #2EB0BA!important;
+}
+
+.btn_upload{
+  background: #2EB0BA!important;
+  color: #ffffff;
+  height: 50px;
+  margin-top: 30px;
+  font-size: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 60px;
+  width: 200px;
+}
+.btn_upload input{
+  background: #2EB0BA!important;
+  color: #ffffff !important;
+}
+
+.myInput{
+height: 40px;
+width: 300px;
+margin-left: -100px;
+}
+.classInput label{
+display: flex;
+width: 300px;
+display: flex;
+justify-content: flex-end;
+margin-right: 10px;
+font-size: 20px;
+}
+.classInput{
+  width: 800px;
+}
+
+input:focus {
+  outline:  none;
+}
