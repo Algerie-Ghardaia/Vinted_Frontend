@@ -1,10 +1,11 @@
 import "../pages/signup.css";
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export const Signup = ({ handlUserToken }) => {
+  
   //-------------------STATE--------------------//
   const [formInput, setFormInput] = useState({
     username: "",
@@ -46,7 +47,7 @@ export const Signup = ({ handlUserToken }) => {
     }
   };
   //--------------------------------------//
-  
+
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -113,8 +114,10 @@ export const Signup = ({ handlUserToken }) => {
             </div>
             <button className="btn_sinscrire">S'inscrire</button>
             <div className="question">
-              <p>Tu as déja un compte ? </p>
-              <p>Connecte toi !</p>
+              <Link to={"/"} style={{display:"flex"}}>
+                <p>Tu as déja un compte ? </p>
+                <p>Connecte toi !</p>
+              </Link>
 
               {errorMessage && <p className="ok_error">{errorMessage}</p>}
             </div>

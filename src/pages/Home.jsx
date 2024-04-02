@@ -27,7 +27,7 @@ export default function Home({ search }) {
     dataFetch();
   }, [search]);
   return isLoading ? (
-    <CircularProgress color="secondary" />
+    <div className="cp" ><CircularProgress size={70} color="success" /></div>
   ) : (
     <main>
       <div>

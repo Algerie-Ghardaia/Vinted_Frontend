@@ -8,15 +8,16 @@
 
 .terminal {
   width: 550px;
-  height: 600px;
   background-color: #ffffff;
   padding: 20px;
-  margin-top: 80px;
+  margin-top: 40px;
   border-radius: 5px;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin-bottom: 50px;
+  height: 700px;
 }
 .haut p {
   font-size: 17px;
@@ -47,7 +48,7 @@
 }
 .rhami{
  border: 0.7px solid #dedede;
- margin-top: 30px;
+ margin-bottom: -30px;
 }
 
 .centre{
@@ -57,15 +58,17 @@
 .style .to{
   font-size: 20px;
   margin-left: 400px;
-  margin-top: 10px;
+  margin-top: 30px;
+  margin-bottom: -20px;
 }
 .style h2{
   font-size: 20px;
-  margin-top: 10px;
+  margin-top: 30px;
+  margin-bottom: -20px;
 }
 
 .text{
-  font-size: 22px;
+  font-size: 18px;
   margin-top: 30px;
   line-height: 30px;
   margin-bottom: 20px;
@@ -74,8 +77,7 @@
 
 .rhami1{
   border: 0.7px solid #dedede;
-  margin-top: 30px;
-  margin-bottom: -50px;
+  margin-bottom: -90px;
  }
 .pay{
   width: 390px;
@@ -119,3 +121,6 @@
   margin-top: -50px;
 }
 
+.stripe{
+  margin-bottom: -50px;
+}

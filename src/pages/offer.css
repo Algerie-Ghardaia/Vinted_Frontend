@@ -22,10 +22,16 @@
   border-radius: 50px;
 }
 
-
+.cp{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 700px;
+  color: #2EB0BA!important;
+}
 .info_article {
   background-color: #ffffff;
-  height: 550px;
+  height: 650px;
   width: 430px;
   padding: 25px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -35,10 +41,11 @@
 .info_article .price {
   font-size: 23px;
   margin-bottom: 15px;
+  margin-right: 10px!important;
 }
 
 .selected img {
-  height: 550px;
+  height: 650px;
   width: 400px;
   border-radius: 3px;
 }
@@ -48,7 +55,7 @@
 
 h5 {
   width: 40%;
-  margin-bottom: 13px;
+  margin-bottom: 10px;
   color: #999999;
 }
 

@@ -57,3 +57,10 @@ p{
     font-size: 12px;
     margin-left: 20px;
 }
+.cp{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 700px;
+  color: #2EB0BA!important;
+}

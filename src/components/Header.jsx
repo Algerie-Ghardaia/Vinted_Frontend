@@ -13,17 +13,9 @@ export default function Header({ handlUserToken, token, search, setSearch }) {
   //-------------------STATE--------------------//
 
   const [showModal, setShowModal] = useState(false);
-  const [isClick, setIsClick] = useState(false);
+
   //---------------------------------------------//
-   //---------Modal---------//
-   const handlaSousHeader = () => {
-    if (isClick) {
-      setIsClick(false);
-    } else {
-      setIsClick(true);
-    }
-  };
-  //----------------------//
+
   //---------Modal---------//
   const handlaShowModal = () => {
     if (showModal) {
@@ -87,7 +79,7 @@ export default function Header({ handlUserToken, token, search, setSearch }) {
                   />
                 </div>
               </div>
-              <div className={isClick?"hidden":""}>{token ? <SousHeader /> : ""}</div>
+              {token ? <SousHeader /> : ""}
               {/*  */}
             </div>
             <div style={{ marginTop: "20px" }}>
@@ -127,10 +119,7 @@ export default function Header({ handlUserToken, token, search, setSearch }) {
                 </button>
               </Link>
               <Link to={"/publish"}>
-                <button className={isClick?"hidden":""} onClick={()=>{
-                  // token ? <SousHeader /> : ""
-                  handlaSousHeader()
-                }}>Vente tes articles</button>
+                <button>Vente tes articles</button>
               </Link>
             </div>
           </div>

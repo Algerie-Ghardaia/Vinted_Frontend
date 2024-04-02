@@ -7,7 +7,7 @@ import Cookies from "js-cookie";
 //------------PAGES-------------//
 import Home from "./pages/Home";
 import Offer from "./pages/Offer";
-import Payment from "./pages/Payment";
+import Payment from "./pages/Payments";
 import { Signup } from "./pages/Signup";
 import { Publish } from "./pages/Publish";
 //-----------------------------//
@@ -41,7 +41,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home search={search} />} />
           <Route path="/offers/:id" element={<Offer />} />
-          <Route path="/offers/payment" element={<Payment />} />
+          <Route path="/payments" element={<Payment />} />
           <Route path="/publish" element={<Publish token={token}/>} />
           <Route
             path="/signup"

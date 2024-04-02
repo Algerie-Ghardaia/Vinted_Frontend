@@ -1,60 +1,91 @@
 import React, { useState } from "react";
 import "../pages/publish.css";
 import axios from "axios";
+import { Navigate, useNavigate } from "react-router-dom";
+import { BiSolidCloudUpload } from "react-icons/bi";
 
 export const Publish = ({ token }) => {
+  
+  const navigate = useNavigate();
+
+  //-------------------STATE--------------------//
+  const [picture, setPicture] = useState();
   const [formPuplish, setFormPuplish] = useState({
     title: "",
+    marque: "",
     discription: "",
-    taille: "",
+    price: "",
     color: "",
     etat: "",
-    lieu: "",
-    picture: "",
+    city: "",
+    taille: "",
     select: false,
   });
+//---------------------------------------------//
 
+  //-------------------HANDL_SUBMIT--------------------//
   const handlSubmitFormPublish = async (event) => {
     event.preventDefault();
     try {
       const formData = new FormData();
+      formData.append("picture", picture);
       formData.append("title", formPuplish.title);
-      formData.append("picture", formPuplish.picture);
-        console.log(formData);
+      formData.append("description", formPuplish.description);
+      formData.append("price", formPuplish.price);
+      formData.append("condition", formPuplish.etat);
+      formData.append("city", formPuplish.city);
+      formData.append("size", formPuplish.taille);
+      formData.append("brand", formPuplish.marque);
+      formData.append("color", formPuplish.color);
+      console.log(formData);
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
         formData,
         {
           headers: {
             Authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data",
           },
         }
       );
-      console.log(response);
-      setFormPuplish(response.data.secure_url);
+      //   console.log(response.data);
+      if (response.data._id) {
+        navigate(`/offers/${response.data._id}`);
+      }
     } catch (error) {
-      console.log(error);
+      console.log("Je suis dans le catch", error);
     }
   };
+  //--------------------------------------------------//
 
-  return (
-    <>
-      {formPuplish.picture && <img src={formPuplish.picture} alt="" />}
+  return token ? (
+    <main>
       <form onSubmit={handlSubmitFormPublish}>
         <div className="main_publish">
           <h1>Vends ton article</h1>
           <div className="publish">
-            <div className="border classInput">
-              {/* <label htmlFor="file">Ajouter une image</label> */}
+            <div className="photo">
+              <label htmlFor="picture-input" className="labe_upload">
+                Ajoute une photo <BiSolidCloudUpload size={40} className="lo" />
+              </label>
               <input
-                htmlFor="file"
-                className="myInput"
+                style={{ display: "none" }}
+                id="picture-input"
                 type="file"
                 onChange={(event) => {
-                  setFormPuplish(event.target.files[0]);
+                  console.log(event);
+                  setPicture(event.target.files[0]);
                 }}
               />
+              <div className="myPhoto">
+                {picture && (
+                  <img src={URL.createObjectURL(picture)} alt="produit" />
+                )}
+              </div>
             </div>
+
+            <hr className="d" />
+
             <div className="title_in">
               <label>Title</label>
               <input
@@ -68,7 +99,31 @@ export const Publish = ({ token }) => {
             </div>
 
             <div className="title_in">
-              <label>Taille</label>
+              <label>Marque</label>
+              <input
+                name="title"
+                type="text"
+                value={formPuplish.marque}
+                onChange={(event) => {
+                  setFormPuplish({ ...formPuplish, marque: event.target.value });
+                }}
+              />
+            </div>
+
+            <div className="title_in">
+              <label>Prix</label>
+              <input
+                name="title"
+                type="text"
+                value={formPuplish.price}
+                onChange={(event) => {
+                  setFormPuplish({ ...formPuplish, price: event.target.value });
+                }}
+              />
+            </div>
+
+            <div className="title_in">
+              <label>taille</label>
               <input
                 type="text"
                 name="taille"
@@ -81,6 +136,7 @@ export const Publish = ({ token }) => {
                 }}
               />
             </div>
+
             <div className="title_in">
               <label>Couleur</label>
               <input
@@ -95,6 +151,7 @@ export const Publish = ({ token }) => {
                 }}
               />
             </div>
+
             <div className="title_in">
               <label>Etat</label>
               <input
@@ -109,37 +166,40 @@ export const Publish = ({ token }) => {
                 }}
               />
             </div>
+
             <div className="title_in">
               <label>Lieu</label>
               <input
                 type="text"
                 name="lieu"
-                value={formPuplish.lieu}
+                value={formPuplish.city}
                 onChange={(event) => {
                   setFormPuplish({
                     ...formPuplish,
-                    lieu: event.target.value,
+                    city: event.target.value,
                   });
                 }}
               />
             </div>
+
             <div className="textarea">
-              <label style={{}}>Décris ton article</label>
+              <label>Décris ton article</label>
               <textarea
                 name="discription"
                 style={{}}
                 type="text"
-                value={formPuplish.discription}
+                value={formPuplish.description}
                 onChange={(event) => {
                   setFormPuplish({
                     ...formPuplish,
-                    discription: event.target.value,
+                    description: event.target.value,
                   });
                 }}
               >
-                {formPuplish.discription}
+                {formPuplish.description}
               </textarea>
             </div>
+
             <div
               className="title_in"
               style={{ marginLeft: "300px", marginBottom: "20px" }}
@@ -165,6 +225,8 @@ export const Publish = ({ token }) => {
           <button className="btn_upload">Ajouter</button>
         </div>
       </form>
-    </>
+    </main>
+  ) : (
+    <Navigate to={"/signup"} />
   );
 };
